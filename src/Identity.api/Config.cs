@@ -27,10 +27,7 @@ namespace Identity.api
         public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource> {
-                new ApiResource {
-                    Name = "customAPI",
-                    DisplayName = "Custom API"
-                }
+                new ApiResource("health-api", "Health API")
             };
         }
 
@@ -41,7 +38,7 @@ namespace Identity.api
                     ClientId = "client",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "health-api" }
                 }
             };
         }

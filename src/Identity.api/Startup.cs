@@ -27,9 +27,10 @@ namespace Identity.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentityServer()
-                .AddInMemoryClients(Config.GetClients())
+                .AddTemporarySigningCredential()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
-                .AddTemporarySigningCredential();
+                .AddInMemoryClients(Config.GetClients());
 
             // Add framework services.
             services.AddMvc();
