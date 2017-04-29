@@ -18,3 +18,9 @@ services:
     build:
       context: ./src/Projects.api
       dockerfile: Dockerfile
+
+  webui:
+    image: cvpz/webui
+    build:
+      context: ./src/WebUi
+      dockerfile: Dockerfile

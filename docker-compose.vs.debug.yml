@@ -45,3 +45,6 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       - "com.microsoft.visualstudio.targetoperatingsystem=linux"
+
+  webui:
+    image: cvpz/webui:dev
