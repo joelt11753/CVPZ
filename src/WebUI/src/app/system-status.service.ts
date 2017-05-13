@@ -7,6 +7,10 @@ export class SystemStatusService {
 
   constructor(private http: Http) { }
 
+  getIdentityServiceStatus(): Observable<boolean> {
+    return this.pingHealthController('http://localhost:5001/api/health/ping');
+  }
+
   getStatusProfileService(): Observable<boolean> {
     return this.pingHealthController('http://localhost:5002/api/health/ping');
   }
